@@ -1,0 +1,5 @@
+com\fawry\demo\repositories\ProductRepository.class
+com\fawry\demo\controllers\productController.class
+com\fawry\demo\models\Product.class
+com\fawry\demo\DemoApplication.class
+com\fawry\demo\services\ProductService.class
