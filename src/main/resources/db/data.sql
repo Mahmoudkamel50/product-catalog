@@ -24,14 +24,16 @@ create SEQUENCE hr.customer_seq;
 
 create table hr.order_items
 (
-    order_items_id number(10) not null,
+    order_items_id number(10) ,
     quantity       number,
     total_Amount   number,
 
     product_id number(4),
-    constraint order_item_fk FOREIGN KEY (product_id)
-    references product(product_id)
 
+    constraint order_items_pk primary key (order_items_id),
+
+    constraint order_item_fk FOREIGN KEY (product_id)
+        references hr.products(product_id)
 );
 
 create table hr.orders
@@ -51,5 +53,20 @@ create table hr.orders
         references hr.order_items(order_items_id)
 
 );
+
+create table hr.order_cart_items
+(
+    id number(10) primary key,
+    order_items_id number(10) ,
+    order_id number(4),
+
+    constraint order_items_id_fk FOREIGN KEY (order_items_id)
+        references hr.order_items(order_items_id),
+
+    constraint order_id_fk FOREIGN KEY (order_id)
+        references hr.orders(order_id)
+);
+
+create SEQUENCE hr.order_card_seq;
 
 

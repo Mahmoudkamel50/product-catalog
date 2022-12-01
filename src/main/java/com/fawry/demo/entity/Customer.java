@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @ToString
 @Entity
@@ -31,5 +32,8 @@ public class Customer implements Serializable {
 
     @Column(name = "EMAIL")
     private String email;
+
+//    @OneToMany()
+//    List<Order> orderList ;
 
 }

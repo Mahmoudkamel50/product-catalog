@@ -39,7 +39,7 @@ public class Product implements Serializable {
     private Long quantity;
 
     @Column(name = "BUYING_COUNTER")
-    private int buyingCounter;
+    private long buyingCounter;
 
     @Column(name = "IMAGE")
     private byte[] image;

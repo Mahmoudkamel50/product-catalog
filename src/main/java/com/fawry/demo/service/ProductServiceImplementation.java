@@ -54,7 +54,7 @@ public class ProductServiceImplementation implements ProductService{
     }
 
     public List<Product> getProductsByPopularity(){
-        return productRepository.findAllByBuyingCounterDesc();
+        return productRepository.findAllByBuyingCounter(5);
     }
 
 }

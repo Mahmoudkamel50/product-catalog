@@ -24,7 +24,7 @@ public class Order implements Serializable {
     @Column(name = "ORDER_DESCRIPTION")
     private String orderDescription;
 
-    @OneToOne(targetEntity = Customer.class ,cascade = CascadeType.MERGE)
+    @ManyToOne(targetEntity = Customer.class ,cascade = CascadeType.MERGE)
     @JoinColumn(name = "CUSTOMER_ID")
     private Customer customer;
 
