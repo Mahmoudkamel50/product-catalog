@@ -1,9 +1,6 @@
 package com.fawry.demo.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,16 +9,21 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
+@Table(name = "ORDER_ITEMS", schema = "HR")
 public class OrderItems implements Serializable {
     private static final long serialVersionUID = 5892901861672274369L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ORDER_ITEMS_ID")
+    private Long orderItemsId;
+    @Column(name = "PRODUCT_ID")
     private Long productId;
-    @OneToOne
+    @OneToOne(targetEntity = Product.class, fetch=FetchType.EAGER )
     private Product product;
+    @Column(name = "QUANTITY")
     private Long quantity;
+    @Column(name = "TOTAL_AMOUNT")
     private double totalAmount;
 }

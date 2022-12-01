@@ -1,10 +1,7 @@
 package com.fawry.demo.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,20 +10,26 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Table(name = "Customer")
+@Getter
+@Setter
+@Table(name = "CUSTOMER", schema = "HR")
 public class Customer implements Serializable {
 
     private static final long serialVersionUID = -7168715675685919727L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id")
+    @SequenceGenerator(sequenceName = "customer_gen",
+            allocationSize = 1,
+            name = "hr.customer_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+                    generator = "customer_gen")
+
+    @Column(name = "CUSTOMER_ID")
     private Long customerId;
 
-    @Column(name = "customer_name")
+    @Column(name = "CUSTOMER_NAME")
     private String customerName;
 
-    @Column(name = "email")
+    @Column(name = "EMAIL")
     private String email;
 
 }

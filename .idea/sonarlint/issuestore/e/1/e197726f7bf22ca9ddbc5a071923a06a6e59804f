@@ -1,16 +1,0 @@
-
-g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ïÍèþùÿÿÿÿ
-A
-java:S1452"&Remove usage of generic wildcard type.(ÄÑõšúÿÿÿÿ
-<
-java:S1452("&Remove usage of generic wildcard type.(˜´®
-A
-java:S1452-"&Remove usage of generic wildcard type.(­ÅÐžûÿÿÿÿ
-A
-java:S14522"&Remove usage of generic wildcard type.(œšå¼ûÿÿÿÿ
-<
-java:S14527"&Remove usage of generic wildcard type.(°»Éª
-A
-java:S1452<"&Remove usage of generic wildcard type.(ç˜ü±üÿÿÿÿ
-G
-java:S1068"*Remove this unused "logger" private field.(ÿøÂ¥8öáá«Ë0

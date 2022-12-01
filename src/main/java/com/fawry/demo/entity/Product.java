@@ -1,42 +1,46 @@
 package com.fawry.demo.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "product")
+@Table(name = "PRODUCTS", schema = "HR")
 public class Product implements Serializable {
     private static final long serialVersionUID = -239601618523459077L;
     @Id
-    @SequenceGenerator(sequenceName = "product_sequence",
+    @SequenceGenerator(sequenceName = "products_gen",
                        allocationSize = 1,
-                       name = "product_sequence")
+                       name = "hr.products_seq")
 
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
-                    generator = "product_sequence")
-    @Column(name = "product_id", nullable = false, updatable = false)
+                    generator = "products_gen")
+    @Column(name = "PRODUCT_ID")
     private Long productId;
 
-    @Column(name = "nameEn", nullable = false, length = 128)
+    @Column(name = "NAMEEN")
     private String nameEn;
 
-    @Column(name = "nameAr", nullable = false, length = 128)
+    @Column(name = "NAMEAR")
     private String nameAr;
 
-    @Column(name = "price", nullable = false, precision = 10, scale = 2)
+    @Column(name = "PRICE")
     private double price;
 
-    @Column(name = "quantity", nullable = false,length = 10)
+    @Column(name = "QUANTITY")
     private Long quantity;
 
-    @Column(name = "image")
-    private String image;
+    @Column(name = "BUYING_COUNTER")
+    private int buyingCounter;
 
+    @Column(name = "IMAGE")
+    private byte[] image;
 }
