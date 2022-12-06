@@ -1,6 +1,6 @@
 package com.fawry.demo.service;
 
-import com.fawry.demo.entity.Product;
+import com.fawry.demo.repository.entity.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
